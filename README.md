@@ -14,6 +14,9 @@ This project is a Library Management web application built using React for the f
 
 ---
 
+## DB Diagram 
+![Logo](assets/db_diagram_stocktutor.png "Schema Image")
+
 ## Installation
 
 1. Clone the repository:
