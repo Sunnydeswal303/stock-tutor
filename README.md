@@ -1,4 +1,4 @@
-# Books Dashboard
+# Library Management
 
 This project is a Library Management web application built using React for the frontend and Node.js/Express for the backend. It allows users to manage a collection of books, including features like borrowing, editing, adding, and deleting books.
 
@@ -13,6 +13,9 @@ This project is a Library Management web application built using React for the f
 - **Delete Books:** Remove books from the collection.
 
 ---
+
+## DB Diagram
+![Logo](assets/db_diagram_stocktutor.png "Schema Image")
 
 ## Installation
 
