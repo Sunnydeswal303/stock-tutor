@@ -85,7 +85,7 @@ export const updateBook = async (req, res) => {
     const { title, author, publishedAt, totalCopies } = req.body;
 
     const updatedBook = await prisma.book.update({
-      where: { id: Number(id) },
+      where: { id },
       data: {
         title,
         author,
@@ -103,7 +103,7 @@ export const updateBook = async (req, res) => {
 export const deleteBook = async (req, res) => {
   try {
     const { id } = req.params;
-    await prisma.book.delete({ where: { id: Number(id) } });
+    await prisma.book.delete({ where: { id } });
     res.status(200).json({ message: "Book deleted successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });

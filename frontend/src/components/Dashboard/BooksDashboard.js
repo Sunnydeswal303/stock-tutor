@@ -44,23 +44,6 @@ const BooksDashboard = () => {
     }
   };
 
-  const borrowBook = async (bookId) => {
-    try {
-      const token = localStorage.getItem("token");
-      const response = await axios.post(
-        "http://localhost:3000/api/books/borrow",
-        { bookId },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-      if (response) toast.success("Book borrowed successfully!");
-      fetchBooks();
-    } catch (error) {
-      toast.error(
-        error.response?.data?.message || "Failed to borrow the book. Try again."
-      );
-    }
-  };
-
   const updateBook = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -155,7 +138,7 @@ const BooksDashboard = () => {
       </div>
 
       <main className="dashboard-main">
-        <div className="table-header">
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
           <h2>Available Books</h2>
           <button className="btn-add" onClick={() => setIsAddModalOpen(true)}>
             Add Book
@@ -181,12 +164,6 @@ const BooksDashboard = () => {
                   <td>{book.totalCopies}</td>
                   <td>
                     <button
-                      className="btn-borrow"
-                      onClick={() => borrowBook(book.id)}
-                    >
-                      Borrow
-                    </button>
-                    <button
                       className="btn-edit"
                       onClick={() => {
                         setSelectedBook(book);
@@ -197,6 +174,7 @@ const BooksDashboard = () => {
                     </button>
                     <button
                       className="btn-delete"
+                      style={{ marginLeft: "1rem" }}
                       onClick={() => {
                         setBookToDelete(book.id);
                         setIsDeleteModalOpen(true);
