@@ -17,12 +17,13 @@ This project is a Library Management web application built using React for the f
 ## DB Diagram
 ![Logo](assets/db_diagram_stocktutor.png "Schema Image")
 
+
 ## Installation
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <cloned_repo_folder>
+   git clone https://github.com/Sunnydeswal303/stock-tutor.git
+   cd stock-tutor
    ```
 
 2. Install dependencies for both frontend and backend:
